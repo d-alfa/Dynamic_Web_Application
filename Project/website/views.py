@@ -6,14 +6,15 @@ from django.contrib.auth import authenticate, login
 def login_view(request):
     if request.method == 'POST':
         username = request.POST['username']
+        # request.POST.get("username")
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('home')
+            return redirect('/')
         else:
-            return render(request, 'App/login.html', {'error': 'Invalid login credentials'})
-    return render(request, 'App/login.html')
+            return render(request, 'website/login.html', {'error': 'Invalid login credentials'})
+    return render(request, 'website/login.html')
 
-def home_view(request):
-    return render(request, 'App/home.html')
+# def home_view(request):
+#     return render(request, 'website/home.html')
