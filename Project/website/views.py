@@ -1,8 +1,10 @@
 
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
+from django.views.decorators.cache import never_cache
+from django.contrib import messages
 
-
+@never_cache
 def login_view(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -12,7 +14,7 @@ def login_view(request):
             login(request, user)
             return redirect('home')
         else:
-            return render(request, 'website/login.html', {'error': 'Invalid login credentials'})
+            messages.error(request, "Invalid login credentials")    
     return render(request, 'website/login.html')
 
 def home_view(request):
