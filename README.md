@@ -11,8 +11,8 @@ Created functional **```login page```** and basic **```home page```** for redire
 
 ## Changes
 
-- **```Create```** static folder for .css files
-- **```Create```** templates folder for .html files
-- **```Update```** settings.py for .css and .html file implimentation
-- **```Update```** urlpatterns inside urls.py
-- **```Create```** login_view and home_view functions inside views.py
+- **```[Create]```** ```static``` folder for ```.css``` files
+- **```[Create]```** ```templates``` folder for ```.html``` files
+- **```[Update]```** ```settings.py``` for ```.css``` and ```.html``` file implimentation
+- **```[Update]```** ```urlpatterns``` inside ```urls.py```
+- **```[Create]```** ```login_view``` and ```home_view``` functions inside ```views.py```
