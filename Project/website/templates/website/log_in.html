@@ -12,7 +12,7 @@
 <body>
     <div class="login-container">
         <h2>Log in</h2>
-        <form action="{% url 'login' %}" method="post">
+        <form action="{% url 'log_in' %}" method="post">
             {% csrf_token %}
             {% if messages %}
                 <div class="messages">
