@@ -1,18 +1,56 @@
-# Dynamic_Web_Application (feature_01)
+# Dynamic_Web_Application
 
 ## Overwiew
 
-Created functional **```login page```** and basic **```home page```** for redirection after login.
+Web application with login page, home page currently in progress!
+
+## Requirements
+
+- Python
+- Django
 
 ## Features
 
-- User authentication using Django's built-in **```authenticate```** and **```login```** functions.
+- User authentication using Django's built-in **authenticate** and **login** functions.
 - Basic error handling for invalid login credentials.
 
-## Changes
+## Installation
 
-- **```[Create]```** ```static``` folder for ```.css``` files
-- **```[Create]```** ```templates``` folder for ```.html``` files
-- **```[Update]```** ```settings.py``` for ```.css``` and ```.html``` file implimentation
-- **```[Update]```** ```urlpatterns``` inside ```urls.py```
-- **```[Create]```** ```login_view``` and ```home_view``` functions inside ```views.py```
+**1. Clone repository:**
+
+```bash
+git clone https://github.com/d-alfa/Dynamic_Web_Application.git
+```
+**2. Navigate to the Dynamic_Web_Application directory:**
+
+```bash
+cd Dynamic_Web_Application/
+```
+**3. Set up virtual environment:**
+
+```bash
+python -m venv venv
+```
+**4. Activate virtual environment:**
+
+```bash
+source venv/bin/activate
+```
+**5. Install django:**
+
+```bash
+pip install django
+```
+**6. Navigate to the Dynamic_Web_Application/Project directory:**
+
+```bash
+cd Dynamic_Web_Application/Project
+```
+**7. Apply migrations :**
+
+```bash
+python manage.py migrate
+```
+
+
+# README in progress !
