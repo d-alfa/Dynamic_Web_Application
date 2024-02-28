@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <style>
+        .button-container {
+            text-align: center; /* Center the buttons */
+            margin-top: 20px; /* Add some space above the buttons */
+        }
+        .button-container button {
+            display: inline-block; /* Display the buttons inline */
+            margin-right: 10px; /* Add some space between the buttons */
+        }
+    </style>
+</head>
+<body>
+    {% if error_message %}
+        <p>{{ error_message }}</p>
+    {% endif %}
+    <div class="button-container">
+        <button onclick="window.location.href='{% url 'login' %}'">Log in</button>
+        <button onclick="window.location.href='{% url 'sign_up' %}'">Sign Up</button>
+    </div>
+</body>
+</html>
