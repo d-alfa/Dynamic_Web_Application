@@ -1,0 +1,28 @@
+/* Center the button container */
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Style the buttons */
+.button-container button {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Add hover effect to buttons */
+.button-container button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Add space between buttons */
+.button-container button + button {
+    margin-left: 10px;
+}
