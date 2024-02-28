@@ -7,7 +7,12 @@ from django.contrib.auth.hashers import make_password
 
 from .models import CustomUser
 
-def register_view(request):
+from django.shortcuts import render
+
+def index_view(request):
+    return render(request, "website/index.html")
+
+def sign_up_view(request):
     if request.method == "POST":
         username = request.POST.get("username")
         password_1 = request.POST.get("password_1")
@@ -15,11 +20,11 @@ def register_view(request):
 
         if password_1 != password_2:
             error_message = "Passwords do not match"
-            return render(request, "website/registration.html", {"error_message": error_message})
+            return render(request, "website/sign_up.html", {"error_message": error_message})
 
         if CustomUser.objects.filter(username=username).exists():
             error_message = "Username already exists"
-            return render(request, "website/registration.html", {"error_message": error_message})
+            return render(request, "website/sign_up.html", {"error_message": error_message})
         
         hashed_password = make_password(password_1)
 
@@ -29,7 +34,7 @@ def register_view(request):
         messages.success(request, "Registration successful. Please log in.")
         return redirect("login")
 
-    return render(request, "website/registration.html")
+    return render(request, "website/sign_up.html")
 
 @never_cache
 def login_view(request):
