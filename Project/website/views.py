@@ -37,7 +37,7 @@ def sign_up_view(request):
     return render(request, "website/sign_up.html")
 
 @never_cache
-def login_view(request):
+def log_in_view(request):
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
@@ -46,12 +46,12 @@ def login_view(request):
             login(request, user)
             return redirect("home")
         else:
-            messages.error(request, "Invalid login credentials")
+            messages.error(request, "Invalid log in credentials")
 
     storage = messages.get_messages(request)
     storage.used = True
 
-    return render(request, "website/login.html")
+    return render(request, "website/log_in.html")
 
 def home_view(request):
     return render(request, "website/home.html")
