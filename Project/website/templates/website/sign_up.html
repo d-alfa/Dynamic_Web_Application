@@ -12,18 +12,15 @@
 <body>
     <div class="login-container">
         <h2>Sign up</h2>
-        {% if error_message %}
-            <p>{{ error_message }}</p>
-        {% endif %}
         <form method="post">
-            <!-- {% if messages %}
+            {% csrf_token %}
+            {% if messages %}
                 <div class="messages">
                     {% for message in messages %}
                         <div class="message {% if message.tags %}{{ message.tags }}"{% endif %}>{{ message }}</div>
                     {% endfor %}
-                </div> -->
-            <!-- {% endif %} -->
-            {% csrf_token %}
+                </div>
+            {% endif %}
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
 
@@ -36,6 +33,5 @@
             <button type="submit">Sign up</button>
         </form>
     </div>
-    {{form.errors}}
 </body>
 </html>
