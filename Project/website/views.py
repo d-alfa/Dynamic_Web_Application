@@ -7,8 +7,6 @@ from django.contrib.auth.hashers import make_password
 
 from .models import CustomUser
 
-from django.shortcuts import render
-
 def index_view(request):
     return render(request, "website/index.html")
 
@@ -19,20 +17,20 @@ def sign_up_view(request):
         password_2 = request.POST.get("password_2")
 
         if password_1 != password_2:
-            error_message = "Passwords do not match"
-            return render(request, "website/sign_up.html", {"error_message": error_message})
+            messages.error(request, "Passwords do not match")
+            return render(request, "website/sign_up.html")
 
         if CustomUser.objects.filter(username=username).exists():
-            error_message = "Username already exists"
-            return render(request, "website/sign_up.html", {"error_message": error_message})
-        
+            messages.error(request, "Username already exists")
+            return render(request, "website/sign_up.html")    
+
         hashed_password = make_password(password_1)
 
         new_user = CustomUser(username=username, password=hashed_password)
         new_user.save()
 
         messages.success(request, "Registration successful. Please log in.")
-        return redirect("login")
+        return redirect("log_in")
 
     return render(request, "website/sign_up.html")
 
