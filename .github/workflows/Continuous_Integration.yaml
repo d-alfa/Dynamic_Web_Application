@@ -1,10 +1,10 @@
 name: Continuous Integration
 
 on:
-  push:
-    branches:
-     - main
-     - feature_01
+  pull_request:
+    branches: 
+      - main
+      - feature_01
 
 jobs:
   build:
