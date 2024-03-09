@@ -6,11 +6,6 @@ on:
      - main
      - feature_01
 
-  pull_request:
-    branches: 
-      - main
-      - feature_01
-
 jobs:
   build:
     name: Build
