@@ -4,7 +4,7 @@ from django.urls import reverse
 from .views import index_view, sign_up_view
 from .models import CustomUser
 
-class Views_Test_Cases(TestCase):
+class Index_View_Test_Cases(TestCase):
 
     def test_index_view(self):
         # Make a GET request to the view using reverse to get the URL
