@@ -27,7 +27,7 @@ jobs:
 
     - name: Set up settings
       run: |
-        export DJANGO_SETTINGS_MODULE=website.settings
+        export DJANGO_SETTINGS_MODULE=Project.settings
 
     - name: Run Tests
       run: |
