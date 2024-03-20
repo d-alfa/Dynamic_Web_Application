@@ -25,6 +25,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Set up settings
+      run: |
+        export DJANGO_SETTINGS_MODULE=Project.settings
+
     - name: Run Tests
       run: |
         python manage.py test
