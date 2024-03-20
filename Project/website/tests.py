@@ -109,3 +109,19 @@ class Log_in_View_Test_Case(TestCase):
         })
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse("home")) 
+
+class Home_View_Test_Case(TestCase):
+
+    # Test setup
+    def setUp(self):
+        self.client = Client()
+
+    # Check if status code is 200
+    def test_home_status_code(self): 
+        response = self.client.get(reverse("home"))
+        self.assertEqual(response.status_code, 200)
+
+    # Check if template "home.html" was used  
+    def test_home_template_used(self): 
+        response = self.client.get(reverse("home"))
+        self.assertTemplateUsed(response,"website/home.html")
