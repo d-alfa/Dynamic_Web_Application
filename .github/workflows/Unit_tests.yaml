@@ -30,6 +30,7 @@ jobs:
         export DJANGO_SETTINGS_MODULE=Project.settings
 
     - name: Run Tests
+      working-directory: /home/d_alfa/Workspace/Dynamic_Web_Application/Project
       run: |
         python manage.py test
     
