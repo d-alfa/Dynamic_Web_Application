@@ -1,4 +1,5 @@
 # Dynamic_Web_Application
+![code coverage badge](https://github.com/d-alfa/Dynamic_Web_Application/actions/workflows/Continuous_Integration.yaml/badge.svg)
 ![code coverage badge](https://github.com/d-alfa/Dynamic_Web_Application/actions/workflows/Unit_tests.yaml/badge.svg)
 
 ## Overwiew
