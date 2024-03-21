@@ -28,5 +28,5 @@ jobs:
     - name: Run Tests
       working-directory: .
       run: |
-        python Project/manage.py test
+        python manage.py test
     
