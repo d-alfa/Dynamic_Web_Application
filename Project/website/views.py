@@ -29,7 +29,6 @@ def sign_up_view(request):
         new_user = CustomUser(username=username, password=hashed_password)
         new_user.save()
 
-        messages.success(request, "Registration successful. Please log in.")
         return redirect("log_in")
 
     return render(request, "website/sign_up.html")
