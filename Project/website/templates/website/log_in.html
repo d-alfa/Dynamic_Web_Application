@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'css/messages.css' %}">
+    <link rel="stylesheet" href="{% static 'css/password_toggle.css' %}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -30,7 +31,7 @@
             <label for="password">Password:</label>
             <div class="password-container">
                 <input type="password" id="password" name="password" required>
-                <div id="togglePassword" class="fas fa-eye" onclick="togglePasswordVisibility()"></div>
+                <div id="togglePassword" class="fas fa-eye" onclick="togglePasswordVisibility('password', 'togglePassword')"></div>
             </div>
             
             <button type="submit">Log in</button>
