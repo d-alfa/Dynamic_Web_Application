@@ -16,6 +16,13 @@ body {
     border-radius: 4px;
 }
 
+.signup-container {
+    background-color: #1B4242;
+    padding: 50px;
+    border: 2px solid #9EC8B9;
+    border-radius: 4px;
+}
+
 h2 {
     text-align: center;
     color: #9EC8B9;
@@ -49,26 +56,4 @@ button {
 
 button:hover {
     background-color: #092635;
-}
-
-/* Show/Hide icon */
-
-.password-container {
-    position: relative;
-}
-
-input[type="password"] {
-    padding-right: 0px;
-    width: 95.7%;
-}
-
-#togglePassword {
-    position: absolute;
-    top: 50%;
-    right: -5px;
-    transform: translateY(-50%);
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    color: #1B4242;
 }
