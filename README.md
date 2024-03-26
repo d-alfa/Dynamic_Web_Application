@@ -4,7 +4,8 @@
 
 ## Overwiew
 
-Web application with index, sign up and login page, home page currently in progress!
+Web application with index, sign up and login page.
+Home page currently in progress!!!
 
 ## Requirements
 
