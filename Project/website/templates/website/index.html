@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index_style.css' %}">
+</head>
+<body>
+    {% if error_message %}
+        <p>{{ error_message }}</p>
+    {% endif %}
+    <div class="button-container">
+        <button onclick="window.location.href='{% url 'log_in' %}'">Log in</button>
+        <button onclick="window.location.href='{% url 'sign_up' %}'">Sign Up</button>
+    </div>
+</body>
+</html>

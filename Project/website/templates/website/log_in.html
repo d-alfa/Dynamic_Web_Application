@@ -7,12 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'css/messages.css' %}">
-    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/password_toggle.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <title>Log in</title>
 </head>
 <body>
     <div class="login-container">
-        <h2>Login</h2>
-        <form action="{% url 'login' %}" method="post">
+        <h2>Log in</h2>
+        <form action="{% url 'log_in' %}" method="post">
             {% csrf_token %}
             {% if messages %}
                 <div class="messages">
@@ -25,9 +29,13 @@
             <input type="text" id="username" name="username" required>
 
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Login</button>
-        </form>
-    </div>
+            <div class="password-container">
+                <input type="password" id="password" name="password" required>
+                <div id="togglePassword" class="fas fa-eye" onclick="togglePasswordVisibility('password', 'togglePassword')"></div>
+            </div>
+            
+            <button type="submit">Log in</button>
+        </form>   
+    <script src="{% static 'js/password-toggle.js' %}"></script>
 </body>
 </html>

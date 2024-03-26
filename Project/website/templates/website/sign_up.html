@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/messages.css' %}">
+    <link rel="stylesheet" href="{% static 'css/password_toggle.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <title>Sign up</title>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Sign up</h2>
+        <form method="post">
+            {% csrf_token %}
+            {% if messages %}
+                <div class="messages">
+                    {% for message in messages %}
+                        <div class="message {% if message.tags %}{{ message.tags }}"{% endif %}>{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <div class="password-container">
+                <input type="password" id="password_1" name="password_1" required>
+                <div id="togglePassword_1" class="fas fa-eye" onclick="togglePasswordVisibility('password_1', 'togglePassword_1')"></div>
+            </div>
+
+            <label for="password">Re-Enter Password:</label>
+            <div class="password-container">
+                <input type="password" id="password_2" name="password_2" required>
+                <div id="togglePassword_2" class="fas fa-eye" onclick="togglePasswordVisibility('password_2', 'togglePassword_2')"></div>
+            </div>
+            <button type="submit">Sign up</button>
+        </form>
+    <script src="{% static 'js/password-toggle.js' %}"></script>
+</body>
+</html>

@@ -28,7 +28,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'website.apps.AppConfig',
-    # 'website',
 ]
 
 MIDDLEWARE = [
@@ -41,7 +40,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Project.urls'
 
 TEMPLATES = [
     {
@@ -116,6 +114,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "website/static/css")
 ]
+
+# Enable ROOT_URLCONF
+ROOT_URLCONF = 'Project.urls'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
