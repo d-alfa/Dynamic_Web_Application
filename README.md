@@ -4,7 +4,7 @@
 
 ## Overwiew
 
-Web application with login page, home page currently in progress!
+Web application with index, sign up and login page, home page currently in progress!
 
 ## Requirements
 
@@ -13,8 +13,18 @@ Web application with login page, home page currently in progress!
 
 ## Features
 
-- User authentication using Django's built-in **authenticate** and **login** functions.
-- Basic error handling for invalid login credentials.
+- Index page
+  - Redirection to signup page
+  - Redirection to login page
+- Sign up page
+  - Show/hide icon for password visability
+  - Error handling (Passwords do not match)
+  - Error handling (Username already exists)
+- Login page
+  - User authentication
+  - Show/hide icon for password visability
+  - Error handling (Invalid login credentials)
+- Home page (under construction!!!)
 
 ## Installation
 
