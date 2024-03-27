@@ -47,15 +47,15 @@ cd Dynamic_Web_Application/scripts
 
 ## Usage
 
-**1. Navigate to the Project directory:**
+**1. Navigate to the scripts directory:**
 
 ```bash
-cd Dynamic_Web_Application/Project
+cd Dynamic_Web_Application/scripts
 ```
-**2. Run server:**
+**2. Run launch.sh script for quicker Django server launch:**
 
 ```bash
-python3 manage.py runserver
+./launch.sh
 ```
 **3. Access website:**
 
