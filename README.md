@@ -34,36 +34,31 @@ Home page currently in progress!!!
 ```bash
 git clone https://github.com/d-alfa/Dynamic_Web_Application.git
 ```
-**2. Navigate to the Dynamic_Web_Application directory:**
+**2. Navigate to the scripts directory:**
 
 ```bash
-cd Dynamic_Web_Application/
+cd Dynamic_Web_Application/scripts
 ```
-**3. Set up virtual environment:**
+**3. Run setup.sh script for quicker project setup:**
 
 ```bash
-python -m venv venv
+./setup.sh
 ```
-**4. Activate virtual environment:**
 
-```bash
-source venv/bin/activate
-```
-**5. Install django:**
+## Usage
 
-```bash
-pip install django
-```
-**6. Navigate to the Dynamic_Web_Application/Project directory:**
+**1. Navigate to the Project directory:**
 
 ```bash
 cd Dynamic_Web_Application/Project
 ```
-**7. Apply migrations :**
+**2. Run server:**
 
 ```bash
-python manage.py makemigrations website
+python3 manage.py runserver
 ```
+**3. Access website:**
 
-
-# README in progress !
+```bash
+localhost:8000
+```
