@@ -1,10 +1,22 @@
+{% load static %}
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home_style.css' %}">
     <title>Home</title>
 </head>
 <body>
-    <h1>Welcome to the Home Page!</h1>
+    <div class="home-container">
+        <div class="nav-item">Home Page</div>
+        {% if user.is_authenticated %}
+            <div class="nav-item-2">Logged in as : {{ user.username }}</div>
+            <div><a class="nav-link" href="{% url 'log_out' %}">Logout</a></div>
+        {% else %}
+            <div><a class="nav-link" href="{% url 'log_in' %}">Login</a></div>
+        {% endif %}
+    </div>
 </body>
 </html>
