@@ -1,6 +1,6 @@
 
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.cache import never_cache
 from django.contrib import messages
 from django.contrib.auth.hashers import make_password
@@ -19,18 +19,16 @@ def sign_up_view(request):
         if password_1 != password_2:
             messages.error(request, "Passwords do not match")
             return render(request, "website/sign_up.html")
-
+        
         if CustomUser.objects.filter(username=username).exists():
             messages.error(request, "Username already exists")
-            return render(request, "website/sign_up.html")    
-
+            return render(request, "website/sign_up.html")
+          
         hashed_password = make_password(password_1)
-
         new_user = CustomUser(username=username, password=hashed_password)
         new_user.save()
-
         return redirect("log_in")
-
+    
     return render(request, "website/sign_up.html")
 
 @never_cache
@@ -51,4 +49,10 @@ def log_in_view(request):
     return render(request, "website/log_in.html")
 
 def home_view(request):
-    return render(request, "website/home.html")
+    current_user = request.user
+    context = {'user': current_user}
+    return render(request, "website/home.html", context)
+
+def log_out(request):
+    logout(request)
+    return redirect('log_in')
